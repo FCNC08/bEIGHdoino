@@ -6,7 +6,6 @@
 OR::OR(int input_count):Function(input_count, 1){}
 
 void OR::simulating(){
-  Serial.println("OR-Simulate");
   bool out_state = false;
   for(int i = 0; i<_input_count; i++){
     out_state = out_state||static_cast<Connection*>(inputs.get(i))->getState();

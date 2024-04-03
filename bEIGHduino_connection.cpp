@@ -2,8 +2,7 @@
 #include "bEIGHduino_function.h"
 #include "Arduino.h"
 
-Connection::Connection(int function_count){
-  _function_count = function_count;
+Connection::Connection(){
   _state = false;
 }
 
@@ -13,10 +12,9 @@ void Connection::addFunction(void* func){
 }
 
 void Connection::setState(bool state){
-  Serial.println("Connection");
   if(state!=_state){
     _state = state;
-      for(int i = 0; i<_function_count; i++){
+      for(int i = 0; i<functions.size(); i++){
       Function* comp = static_cast<Function*>(functions.get(i));
       comp->simulate();
     }

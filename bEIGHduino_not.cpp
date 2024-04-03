@@ -6,7 +6,6 @@
 NOT::NOT():Function(1, 1){}
 
 void NOT::simulating(){
-  Serial.println("NOT-Simulate");
   bool out_state =!static_cast<Connection*>(inputs.get(0))->getState();
   static_cast<Connection*>(outputs.get(0))->setState(out_state);
 }

@@ -1,12 +1,11 @@
 #include "bEIGHduino_util.h"
+Connection** inputs = new Connection*[2];
 
 void setup() {
-  Serial.begin(9600);
-  Connection** inputs = new Connection*[2];
-  inputs[0] = new Connection(1);
-  inputs[1] = new Connection(1);
+  inputs[0] = new Connection();
+  inputs[1] = new Connection();
 
-  Output* output = new Output(0, 4);
+  Output* output = new Output(4);
   XOR* ands = new XOR(2);
 
   ands->addInput(inputs[0]);

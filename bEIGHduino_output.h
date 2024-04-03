@@ -5,7 +5,7 @@
 
 class Output : public Connection{
   public:
-    Output(int function_count, int pin);
+    Output(int pin);
     void setState(bool state) override;
   private:
     int _pin;

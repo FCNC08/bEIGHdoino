@@ -8,13 +8,12 @@
 
 class Connection{
   public:
-    Connection(int function_count);
+    Connection();
     virtual void setState(bool state);
     bool getState();
     void addFunction(void* func);
     bool _type;
   protected:
-    int _function_count;
     LinkedList functions;
     bool _state;
 };
