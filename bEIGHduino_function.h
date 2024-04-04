@@ -5,7 +5,7 @@
 
 class Function{
   public:
-    Function(int input_count, int outpu_count);
+    Function(int input_count, int output_count);
     void simulate();
     virtual void simulating();
     void addInput(void* in);
